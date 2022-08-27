@@ -24,8 +24,8 @@ if response.ok:
     print("           >>> Raw Response: " + response.text)
     stage = int(response.text)
     if stage == 1:
-        playsound('fanfare-short.wav')
+        playsound('sounds/fanfare-short.wav')
     if stage > 1:
-        playsound('smw_gameover.wav')
+        playsound('sounds/smw_gameover.wav')
 else:
     print("       HTTPS Error or no response")
