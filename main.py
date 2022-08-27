@@ -6,6 +6,7 @@
 
 
 import requests
+from playsound import playsound
 
 # Get Method Definitions (see API documentation techrad.co.za)
 GET_STATUS = "https://loadshedding.eskom.co.za/LoadShedding/GetStatus"
@@ -21,5 +22,10 @@ if response.ok:
     print("       HTTPS Response OK")
     # Let's unpack the data and print it
     print("           >>> Raw Response: " + response.text)
+    stage = int(response.text)
+    if stage == 1:
+        playsound('fanfare-short.wav')
+    if stage > 1:
+        playsound('smw_gameover.wav')
 else:
     print("       HTTPS Error or no response")
