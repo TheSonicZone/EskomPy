@@ -6,7 +6,6 @@
 
 
 import requests
-from playsound import playsound
 import simpleaudio as sa
 
 # Get Method Definitions (see API documentation techrad.co.za)
@@ -27,9 +26,19 @@ if response.ok:
     print("           >>> Raw Response: " + response.text)
     stage = int(response.text)
     if stage == 1:
-        playsound('fanfare-short.wav')
+        # Testing different sound library
+        # https://realpython.com/playing-and-recording-sound-python/
+        filename = 'fanfare-short.wav'
+        wave_obj = sa.WaveObject.from_wave_file(filename)
+        play_obj = wave_obj.play()
+        play_obj.wait_done()  # Wait until sound has finished playing
     if stage > 1:
-        playsound('sounds/smw_gameover.wav')
+        # Testing different sound library
+        # https://realpython.com/playing-and-recording-sound-python/
+        filename = 'smw_gameover.wav'
+        wave_obj = sa.WaveObject.from_wave_file(filename)
+        play_obj = wave_obj.play()
+        play_obj.wait_done()  # Wait until sound has finished playing
 
     if stage == -1:
         print("  Method returned -1: Looks like Eskom's web interface is down")
