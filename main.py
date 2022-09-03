@@ -15,6 +15,9 @@ GET_STATUS = "https://loadshedding.eskom.co.za/LoadShedding/GetStatus"
 
 # Program begin
 print("Program start...")
+
+# Testing different sound library
+# https://realpython.com/playing-and-recording-sound-python/
 filename = 'fanfare-short.wav'
 wave_obj = sa.WaveObject.from_wave_file(filename)
 play_obj = wave_obj.play()
