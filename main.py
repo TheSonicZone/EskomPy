@@ -24,7 +24,7 @@ if response.ok:
     print("           >>> Raw Response: " + response.text)
     stage = int(response.text)
     if stage == 1:
-        playsound('sounds/fanfare-short.wav')
+        playsound('fanfare-short.wav')
     if stage > 1:
         playsound('sounds/smw_gameover.wav')
 else:
