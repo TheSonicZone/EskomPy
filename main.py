@@ -27,5 +27,8 @@ if response.ok:
         playsound('sounds/fanfare-short.wav')
     if stage > 1:
         playsound('sounds/smw_gameover.wav')
+
+    if stage == -1:
+        print("  Method returned -1: Looks like Eskom's web interface is down")
 else:
     print("       HTTPS Error or no response")
