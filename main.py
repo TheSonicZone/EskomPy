@@ -7,6 +7,7 @@
 
 import requests
 from playsound import playsound
+import simpleaudio as sa
 
 # Get Method Definitions (see API documentation techrad.co.za)
 GET_STATUS = "https://loadshedding.eskom.co.za/LoadShedding/GetStatus"
@@ -14,6 +15,10 @@ GET_STATUS = "https://loadshedding.eskom.co.za/LoadShedding/GetStatus"
 
 # Program begin
 print("Program start...")
+filename = 'fanfare-short.wav'
+wave_obj = sa.WaveObject.from_wave_file(filename)
+play_obj = wave_obj.play()
+play_obj.wait_done()  # Wait until sound has finished playing
 
 # Let's perform the request
 print("   Requesting the status from Eskom")
