@@ -42,7 +42,7 @@ if response.ok:
 
     if stage == -1:
         print("  Method returned -1: Looks like Eskom's web interface is down")
-        filename = 'cough3.wav'
+        filename = 'babycrying.wav'
         wave_obj = sa.WaveObject.from_wave_file(filename)
         play_obj = wave_obj.play()
         play_obj.wait_done()  # Wait until sound has finished playing
