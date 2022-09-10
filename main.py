@@ -36,7 +36,7 @@ def get_processor_name():
 
 # Program begin
 print("Program start...")
-
+print("CPU TYPE DETECTED: " + get_processor_name())
 
 
 # Let's perform the request
